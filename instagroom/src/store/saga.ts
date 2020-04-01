@@ -13,7 +13,6 @@ const unsplash = new Unsplash({
 export const apiFetch = (search: string) => {
   return unsplash.search.photos(search, 1, 10, { orientation: "portrait" })
     .then(res => res.json())
-    .then(json => json)
     .catch(err => console.error({ err }))
 }
 

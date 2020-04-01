@@ -1,5 +1,5 @@
-import { fetchPublicPhotosFeed, apiFetch } from "../store/saga";
 import { call, put } from "redux-saga/effects";
+import { fetchPublicPhotosFeed, apiFetch } from "../store/saga"
 
 test('fetchPublicPhotosFeed', () => {
   const gen = fetchPublicPhotosFeed({ type: 'saga/fetchPublicPhotosFeed', payload: 'beard' })
