@@ -16,6 +16,7 @@
     "@types/react-redux": "^7.1.7",
     "@types/unsplash-js": "^6.0.1",
     "antd": "^4.0.4",
+    "gh-pages": "^2.2.0",
     "husky": "^4.2.3",
     "immer": "^6.0.2",
     "react": "^16.13.1",

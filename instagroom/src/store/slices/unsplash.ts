@@ -10,22 +10,11 @@ const initialState: IUnsplashState = {
 }
 
 /**
- * {type: 'counter/increment'}
- * Increments the counter by 1.
+ * {type: 'unsplash/setPics', payload: { results: [pic1, pic2, ...] }}
+ * Inserts the pics into the store.
  */
-const incrementReducer = {
-  increment: produce((draft: Draft<IUnsplashState>, { payload: { results: items } }: PayloadAction<any>) => {
-    console.log({ items })
-    draft.items = items
-  })
-}
-
-/**
- * {type: 'counter/decrement'}
- * Decrements the counter by 1.
- */
-const decrementReducer = {
-  decrement: produce((draft: Draft<IUnsplashState>, { payload: { items } }: PayloadAction<IUnsplashState>) => {
+const setPicsReducer = {
+  setPics: produce((draft: Draft<IUnsplashState>, { payload: { results: items } }: PayloadAction<any>) => {
     draft.items = items
   })
 }
@@ -34,8 +23,7 @@ export const unsplashSlice = createSlice({
   name: 'unsplash',
   initialState,
   reducers: {
-    ...incrementReducer,
-    ...decrementReducer
+    ...setPicsReducer,
   },
 })
 
