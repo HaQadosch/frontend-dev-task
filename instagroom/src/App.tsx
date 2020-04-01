@@ -2,8 +2,7 @@ import React from 'react'
 import './App.css'
 
 import { AppDispatch } from './store/store'
-import { useDispatch, useSelector } from "react-redux"
-import { RootState } from './store/rootReducer'
+import { useDispatch } from "react-redux"
 import { BroomList } from './ui/BroomList'
 
 export const App: React.FC = () => {
