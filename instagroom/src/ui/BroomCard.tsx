@@ -9,11 +9,14 @@ interface IBroomCardProps {
   item: any
 }
 
-const BroomCardBare: React.FC<IBroomCardProps> = ({ item }) => {
+const BroomCard: React.FC<IBroomCardProps> = ({ item }) => {
 
   return (
     <Card
-      style={ { width: 300 } }
+      style={ {
+        width: 300,
+        backgroundColor: `${ item.color || '#000000' }87`
+      } }
       cover={
         <img
           alt={ item.alt_description }
@@ -27,8 +30,12 @@ const BroomCardBare: React.FC<IBroomCardProps> = ({ item }) => {
       ] }
     >
       <Meta
-        avatar={ <Avatar src={ item.user.profile_image.small } alt={ item.user.name } /> }
-        title={ item.description }
+        avatar={
+          <a href={ item.user.links.html } >
+            <Avatar src={ item.user.profile_image.small } alt={ item.user.name } />
+          </a>
+        }
+        title={ <a href={ item.links.html } style={ { color: 'black' } }>{ item.description || 'no title' }</a> }
         description={ item.alt_description }
       />
     </Card>
@@ -44,8 +51,8 @@ const BroomFallbackCard: React.FC<FallbackProps> = ({ componentStack, error }) =
   </div>
 );
 
-export const BroomCard: React.FC<IBroomCardProps> = ({ item }) => {
+export const SafeBroomCard: React.FC<IBroomCardProps> = ({ item }) => {
   return <ErrorBoundary FallbackComponent={ BroomFallbackCard }>
-    <BroomCardBare item={ item } />
+    <BroomCard item={ item } />
   </ErrorBoundary>
 }

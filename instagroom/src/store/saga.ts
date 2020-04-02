@@ -30,8 +30,13 @@ function* watchFetchPublicPhotosFeed () {
   yield takeEvery('saga/fetchPublicPhotosFeed', fetchPublicPhotosFeed)
 }
 
+function* firstImport () {
+  yield put({ type: 'saga/fetchPublicPhotosFeed', payload: 'beard' })
+}
+
 export function* rootSaga () {
   yield all([
+    // firstImport(),
     watchFetchPublicPhotosFeed()
   ])
 }
