@@ -36,7 +36,7 @@ function* firstImport () {
 
 export function* rootSaga () {
   yield all([
-    // firstImport(),
+    firstImport(),
     watchFetchPublicPhotosFeed()
   ])
 }
