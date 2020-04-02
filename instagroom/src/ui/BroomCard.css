@@ -1,0 +1,19 @@
+.card {
+  width: 300px;
+  cursor: default;
+}
+
+.card .card__meta.card__title {
+  color: black;
+}
+
+.card .card__meta.card__despcription {
+  font-size: smaller ;
+  color: black;
+}
+.card .card__meta.card__despcription a {
+  color: black;
+  text-decoration: underline;
+  padding-left: 4px;
+  padding-right: 4px;
+}
